@@ -1,6 +1,4 @@
 <div>
-  <h1>Life Quotes</h1>
-  <hr>
   <ul>
     <div *ngFor='let quote of quotes;let i = index'>
       <li appStrikethrough>{{quote.name}} due on {{quote.completeDate|date}}</li>
