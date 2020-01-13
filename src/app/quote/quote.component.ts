@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Quote } from '../quote';
 
 @Component({
   selector: 'app-quote',
@@ -7,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuoteComponent implements OnInit {
 
-  quotes:Quote = [
-    {id:1, name:'There is no charm equal to tenderness of heart.',description:'The heart desire'},
-    {id:2,name:'Learning never exhausts the mind.',description:'The control of mind'},
-    {id:3,name:'Let us sacrifice our today so that our children can have a better tomorrow.',description:'Our todays actions determines our future'},
-    {id:4,name:'There is nothing permanent except change.',description:'Change can only be made when one accepts to change'},
-    {id:5,name:'But man is not made for defeat. A man can be destroyed but not defeated.',description:'Once destroy one can sill rise up'},
+  quotes:Quote[] = [
+    new Quote(1, 'There is no charm equal to tenderness of heart.', ''),
+    new Quote(2,'Learning never exhausts the mind.','The control of mind'),
+    new Quote(3,'Let us sacrifice our today so that our children can have a better tomorrow.', 'Our todays actions determines our future'),
+    new Quote(4,'There is nothing permanent except change.', 'Change can only be made when one accepts to change'),
+    new Quote(5,'But man is not made for defeat. A man can be destroyed but not defeated.', 'Once destroy one can sill rise up'),
   ];
+  toggleDetails(index){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
+  completeQuote(isComplete, index){
+    if (isComplete) {
+      this.quotes.splice(index,1);
+    }
+  }
 
   constructor() { }
 
