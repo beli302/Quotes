@@ -2,33 +2,32 @@
   <div class="row">
     <div class="col-md-2">
     </div>
-      <!--Quotes list-->
+      
       <div class="quote" *ngFor='let quote of quotes;let i = index'>
         <p> {{quote.name}}</p>
         <div class="votes">
-            <h3>Likes:<span id="liked">{{quote.counter1}}</span></h3>
-          <h3>Dislikes: <span id="disliked">{{quote.counter2}}</span></h3>
+            <h3>Upvote:<span id="liked">{{quote.like}}</span></h3>
+          <h3>Downvote: <span id="disliked">{{quote.like2}}</span></h3>
         </div>
         <div class="vote-buttons">
-          <button (click)="upvote(quote)" class="upvote">Like</button>
-          <button (click)="downvote(quote)" class="downvote">Dislike</button><br>
+          <button (click)="upvote(quote)" class="upvote">Upvote</button>
+          <button (click)="downvote(quote)" class="downvote">Downvote</button><br>
         </div>
-        <button (click)='toogleDetails(i)'> Quote Details</button>
-        <app-quote-detail *ngIf="quote.showInformation" [quote]='quote' (deleteit)='deleteQuote($event,i)'>
+        <button (click)='toggleDetails(i)'>Toggle Details</button>
+        <app-quote-detail *ngIf="quote.showDescription" [quote]='quote' (deleteit)='deleteQuote($event,i)'>
         </app-quote-detail>
       </div>
       <div class="col-md-8">
-          <button *ngIf='quotes.length>0' class="bestquote" (click)='getMostLikedQuote()'>Check Best Quote</button>
-          <div *ngIf='mostLikedQuote && quotes.length>0'>
-            <div class="bestVotes" appHighlightquote>
-              <h3>Most liked Poster:{{mostLikedQuote}}</h3>
-              <p> Most Votes:{{mostVotes}}</p>
-              <p> Most liked Author:{{mostLikedAuthor}}</p>
-              <p> Most Liked Quote:{{mostLikedPoster}}</p>
+          <button *ngIf='quotes.length>0' class="rankquote" (click)='getBestQuote()'>Ranked Quotes</button>
+          <div *ngIf='bestQuote && quotes.length>0'>
+            <div class="bestVotes" appStrikethrough>
+              <h3>Best Poster:{{bestQuote}}</h3>
+              <p> Best Votes:{{bestVotes}}</p>
+              <p> Best Author:{{bestAuthor}}</p>
+              <p> Best Quote:{{bestPoster}}</p>
             </div>
           </div>
-      <h4>Create Your Quote</h4>
-      <app-quotes-form (addQuotes)='CreateYourQuotes($event)'></app-quotes-form>
+      <app-quote-form (addQuotes)='CreateYourQuotes($event)'></app-quote-form>
     </div>
   </div>
   <div class="col-md-2">

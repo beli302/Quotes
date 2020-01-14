@@ -14,10 +14,10 @@ export class QuoteComponent implements OnInit {
     new Quote('But man is not made for defeat. A man can be destroyed but not defeated.','By Ernest Hemingway','Caroline',new Date(2020,1,11)),
   ];
   
-  mostLikedQuote: string;
-  mostLikedAuthor: string;
-  mostLikedPoster : string;
-  mostVotes = 0;
+  bestQuote: string;
+  bestAuthor: string;
+  bestPoster : string;
+  bestVotes = 0;
   deleteQuote(deleteit: any, index: any) {
     if (deleteit) {
       let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
@@ -26,7 +26,7 @@ export class QuoteComponent implements OnInit {
     }
   }
 }
-  toogleDetails(index: any) {
+  toggleDetails(index: any) {
     this.quotes[index].showDescription = !
       this.quotes[index].showDescription;
   }
@@ -36,21 +36,21 @@ export class QuoteComponent implements OnInit {
     quote.postDate = new Date(quote.postDate)
     this.quotes.push(quote)
   }
-  counter1 = 0;
-  counter2 = 0;
+  like = 0;
+  dislike = 0;
   upvote(quote) {
-    quote.counter1 = quote.counter1 + 1;
+    quote.like = quote.like + 1;
   }
   downvote(quote) {
-    quote.counter2 = quote.counter2 + 1;
+    quote.like2 = quote.like2 + 1;
   }
-  getMostLikedQuote(){
+  getBestQuote(){
     for(let i=0; i<this.quotes.length; i++){
-      if(this.quotes[i].counter1 > this.mostVotes){
-        this.mostVotes = this.quotes[i].counter1;
-        this.mostLikedPoster = this.quotes[i].name;
-        this.mostLikedQuote = this.quotes[i].information;
-        this.mostLikedAuthor = this.quotes[i].author;
+      if(this.quotes[i].like > this.bestVotes){
+        this.bestVotes = this.quotes[i].like;
+        this.bestPoster = this.quotes[i].name;
+        this.bestQuote = this.quotes[i].information;
+        this.bestAuthor = this.quotes[i].author;
       }
     }
   }
