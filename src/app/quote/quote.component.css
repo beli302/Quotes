@@ -16,6 +16,7 @@ button {
     color: white;
     border-radius: 5px;
     margin-bottom: 5px;
+    text-align: center;
 }
 .col-md-8, .col-md-2 {
     padding: 30px;
@@ -36,7 +37,6 @@ h4 {
 }
 .upvote{
     background-color: green;
-    
 }
 .downvote{
     background-color:blue;
