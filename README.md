@@ -14,3 +14,6 @@ By Belinda Okumu
 Pull requests are welcome.
 ## Project link
 https://beli302.github.io/Quotes/
+## Contacts
+* Tel: +254706313301
+* Email: belindashirkiz@gmail.com
