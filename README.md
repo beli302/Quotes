@@ -3,10 +3,10 @@
 This is an application where users can create quotes and have those quotes voted on whether they are terrible or are inspirational.
 ## Authors information
 By Belinda Okumu
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Set up instractions
+* Open my Github account.
+* Git clone my repository.
+* Send a pull request.
 
 ## Running unit tests
 
