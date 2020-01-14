@@ -6,7 +6,9 @@
     box-shadow: -1px 0px 17px -1px rgba(199, 199, 199, 1);
 }
 p {
-    font-size: 25px;
+    font-size: 30px;
+    font-style:italic;
+    text-align: center;
 }
 button {
     margin-right: 450px;
@@ -34,6 +36,7 @@ h4 {
 }
 .upvote{
     background-color: green;
+    
 }
 .downvote{
     background-color:blue;
