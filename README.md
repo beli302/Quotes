@@ -7,10 +7,9 @@ By Belinda Okumu
 * Open my Github account.
 * Git clone my repository.
 * Send a pull request.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Technology used
+*Angular
+*Css
 
 ## Running end-to-end tests
 
